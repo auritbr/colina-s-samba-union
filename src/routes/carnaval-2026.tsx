@@ -57,11 +57,11 @@ function Carnaval() {
       </section>
 
       <section className="bg-[color:var(--verde-profundo)] text-white">
-        <div className="container-uc py-20 md:py-28">
+        <div className="container-uc py-14 md:py-20">
           <div className="grid gap-10 md:grid-cols-2">
             <div>
               <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.28em] text-[color:var(--dourado)]"><Music className="h-4 w-4" /> Samba-enredo</div>
-              <h3 className="mt-3 text-3xl font-extrabold md:text-4xl">Samba-enredo em breve</h3>
+              <h3 className="mt-3 h-section">Samba-enredo em breve</h3>
               <p className="mt-4 text-white/80">A letra completa, os autores e o áudio oficial estarão disponíveis nesta seção assim que forem divulgados.</p>
               <div className="mt-6 flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
                 <PlayCircle className="h-10 w-10 text-white/80" />
@@ -73,7 +73,7 @@ function Carnaval() {
             </div>
             <div>
               <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.28em] text-[color:var(--dourado)]"><Calendar className="h-4 w-4" /> Agenda de ensaios</div>
-              <h3 className="mt-3 text-3xl font-extrabold md:text-4xl">Ensaios abertos à comunidade</h3>
+              <h3 className="mt-3 h-section">Ensaios abertos à comunidade</h3>
               <ul className="mt-6 space-y-3">
                 {[1,2,3].map((i) => (
                   <li key={i} className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-4">

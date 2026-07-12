@@ -22,7 +22,7 @@ function Titulos() {
     <>
       <PageHero title="Sala de Troféus" subtitle="As conquistas que marcaram nossa história." image={pavilhao} />
       <section className="bg-[color:var(--verde-escuro)] text-white">
-        <div className="container-uc py-20 md:py-28">
+        <div className="container-uc py-14 md:py-20">
           <SectionTitle invert eyebrow="Conquistas" title="Cada troféu é uma memória" description="Este espaço reúne os títulos conquistados pela União da Colina ao longo de sua trajetória. Cada linha é fruto do trabalho coletivo da comunidade." />
           <div className="mt-6"><PlaceholderNote>Lista de títulos em atualização</PlaceholderNote></div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

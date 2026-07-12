@@ -171,7 +171,7 @@ function Index() {
 
       {/* TIMELINE */}
       <section className="bg-background">
-        <div className="container-uc py-20 md:py-28">
+        <div className="container-uc py-14 md:py-20">
           <SectionTitle
             eyebrow="Linha do tempo"
             title="Nossa trajetória"
@@ -204,7 +204,7 @@ function Index() {
       {/* MEMÓRIA VIVA */}
       <section className="relative bg-[color:var(--verde-profundo)] text-white">
         <img src={pavilhao} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover opacity-15" loading="lazy" />
-        <div className="container-uc relative py-20 md:py-28">
+        <div className="container-uc relative py-14 md:py-20">
           <SectionTitle
             eyebrow="Memória viva"
             title="A história permanece nas lembranças"
@@ -243,7 +243,7 @@ function Index() {
 
       {/* VÍDEO */}
       <section className="bg-background">
-        <div className="container-uc py-20 md:py-28">
+        <div className="container-uc py-14 md:py-20">
           <SectionTitle
             eyebrow="Acervo audiovisual"
             title="Histórias contadas por quem viveu"
@@ -265,7 +265,7 @@ function Index() {
 
       {/* SEGMENTOS */}
       <section className="bg-[color:var(--cinza-claro)]">
-        <div className="container-uc py-20 md:py-28">
+        <div className="container-uc py-14 md:py-20">
           <SectionTitle
             eyebrow="Segmentos"
             title="Quem faz a União da Colina"
@@ -308,7 +308,7 @@ function Index() {
             <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.28em] text-[color:var(--dourado)]">
               <Calendar className="h-4 w-4" /> Próximo carnaval
             </p>
-            <h2 className="mt-4 text-4xl font-extrabold leading-tight md:text-6xl">Carnaval 2026</h2>
+            <h2 className="mt-4 h-section">Carnaval 2026</h2>
             <p className="mt-6 max-w-xl text-lg text-white/80">
               O enredo, o samba e a fantasia que vão levar a União da Colina para a avenida. Uma nova página da nossa história será escrita.
             </p>
@@ -331,7 +331,7 @@ function Index() {
 
       {/* CONQUISTAS */}
       <section className="bg-[color:var(--verde-escuro)] text-white">
-        <div className="container-uc py-20 md:py-28">
+        <div className="container-uc py-14 md:py-20">
           <SectionTitle
             eyebrow="Sala de troféus"
             title="Nossas conquistas"
@@ -359,7 +359,7 @@ function Index() {
 
       {/* GALERIA */}
       <section className="bg-background">
-        <div className="container-uc py-20 md:py-28">
+        <div className="container-uc py-14 md:py-20">
           <SectionTitle
             eyebrow="Galeria"
             title="Imagens que contam nossa história"
@@ -381,9 +381,9 @@ function Index() {
       {/* CHAMADA FINAL */}
       <section className="relative overflow-hidden bg-[color:var(--verde-profundo)] text-white">
         <img src={brasao.url} alt="" aria-hidden="true" className="pointer-events-none absolute -left-32 top-1/2 hidden -translate-y-1/2 h-[520px] w-[520px] opacity-10 md:block" />
-        <div className="container-uc relative py-24 text-center md:py-32">
+        <div className="container-uc relative py-16 text-center md:py-24">
           <Award className="mx-auto mb-6 h-10 w-10 text-[color:var(--dourado)]" />
-          <h2 className="mx-auto max-w-3xl text-4xl font-extrabold leading-tight md:text-6xl">
+          <h2 className="mx-auto max-w-3xl h-section">
             Uma história que pertence a toda a cidade
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/80">

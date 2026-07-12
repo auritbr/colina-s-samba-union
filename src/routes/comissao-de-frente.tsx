@@ -28,7 +28,7 @@ function Comissao() {
     <>
       <PageHero title="Comissão de Frente" subtitle="A abertura do espetáculo da União da Colina." image={comissao} />
       <section className="bg-background">
-        <div className="container-uc py-20 md:py-28">
+        <div className="container-uc py-14 md:py-20">
           <SectionTitle eyebrow="Apresentação" title="O primeiro olhar da avenida" description="A Comissão de Frente é a responsável por abrir o desfile e apresentar o enredo ao público, com uma performance coreografada e cheia de simbolismo." />
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {blocos.map((b) => (

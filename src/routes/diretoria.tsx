@@ -26,7 +26,7 @@ function Diretoria() {
     <>
       <PageHero title="Diretoria" subtitle="Liderança e gestão institucional da União da Colina." image={historia} />
       <section className="bg-background">
-        <div className="container-uc py-20 md:py-28">
+        <div className="container-uc py-14 md:py-20">
           <SectionTitle eyebrow="Institucional" title="Quem conduz a escola" description="A diretoria é responsável pela gestão institucional, cultural e artística da União da Colina, zelando pela preservação da memória e pelo futuro da escola." />
           <div className="mt-4"><PlaceholderNote>Informações da gestão atual em atualização</PlaceholderNote></div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

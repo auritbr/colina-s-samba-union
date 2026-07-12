@@ -22,7 +22,7 @@ function MestreSala() {
     <>
       <PageHero title="Mestre-Sala e Porta-Bandeiras" subtitle="Elegância, respeito e proteção ao pavilhão." image={mestreSala} />
       <section className="bg-background">
-        <div className="container-uc py-20 md:py-28">
+        <div className="container-uc py-14 md:py-20">
           <SectionTitle eyebrow="Primeiro casal" title="O bailado que protege o pavilhão" description="Um dos segmentos mais tradicionais do samba, o casal de mestre-sala e porta-bandeiras carrega e protege o pavilhão da escola com respeito e elegância." />
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {[1,2].map((i) => (

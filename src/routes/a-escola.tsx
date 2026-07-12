@@ -50,7 +50,7 @@ function AEscola() {
         </div>
       </section>
       <section className="bg-[color:var(--cinza-claro)]">
-        <div className="container-uc py-20 md:py-28">
+        <div className="container-uc py-14 md:py-20">
           <SectionTitle eyebrow="Trajetória" title="Marcos da nossa história" />
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {blocos.map((b) => (

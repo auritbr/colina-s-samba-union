@@ -22,7 +22,7 @@ function VelhaGuarda() {
     <>
       <PageHero title="Velha Guarda" subtitle="Memória viva, experiência e ancestralidade." image={velhaGuarda} />
       <section className="bg-background">
-        <div className="container-uc py-20 md:py-28">
+        <div className="container-uc py-14 md:py-20">
           <SectionTitle eyebrow="Guardiões" title="Os que sustentam a nossa história" description="A Velha Guarda é a expressão da ancestralidade da União da Colina. Reúne sambistas que viveram e ajudaram a construir a trajetória da escola, transmitindo tradição e afeto para as novas gerações." />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[1,2,3,4,5,6].map((i) => (

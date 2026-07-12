@@ -22,7 +22,7 @@ function Interpretes() {
     <>
       <PageHero title="Intérpretes" subtitle="As vozes que conduzem o samba da União da Colina." image={interpretes} />
       <section className="bg-background">
-        <div className="container-uc py-20 md:py-28">
+        <div className="container-uc py-14 md:py-20">
           <SectionTitle eyebrow="Vozes" title="Quem canta a nossa história" />
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {[

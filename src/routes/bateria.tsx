@@ -24,7 +24,7 @@ function Bateria() {
     <>
       <PageHero title="Bateria" subtitle="O coração pulsante da União da Colina." image={bateria} />
       <section className="bg-background">
-        <div className="container-uc py-20 md:py-28">
+        <div className="container-uc py-14 md:py-20">
           <SectionTitle eyebrow="Ritmo" title="A força que move a avenida" description="A bateria da União da Colina reúne ritmistas de várias gerações, mantendo viva a sonoridade que caracteriza a escola desde suas primeiras apresentações." />
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {["Mestres","Rainha da Bateria","Ritmistas"].map((t) => (
@@ -38,7 +38,7 @@ function Bateria() {
         </div>
       </section>
       <section className="bg-[color:var(--cinza-claro)]">
-        <div className="container-uc py-20 md:py-24">
+        <div className="container-uc py-14 md:py-18">
           <SectionTitle eyebrow="Instrumentos" title="A instrumentação da bateria" />
           <div className="mt-12 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
             {instrumentos.map((i) => (
