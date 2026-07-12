@@ -9,8 +9,75 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VelhaGuardaRouteImport } from './routes/velha-guarda'
+import { Route as TitulosRouteImport } from './routes/titulos'
+import { Route as MestreSalaEPortaBandeirasRouteImport } from './routes/mestre-sala-e-porta-bandeiras'
+import { Route as InterpretesRouteImport } from './routes/interpretes'
+import { Route as DiretoriaRouteImport } from './routes/diretoria'
+import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as ComissaoDeFrenteRouteImport } from './routes/comissao-de-frente'
+import { Route as Carnaval2026RouteImport } from './routes/carnaval-2026'
+import { Route as BateriaRouteImport } from './routes/bateria'
+import { Route as AlaDasBaianasRouteImport } from './routes/ala-das-baianas'
+import { Route as AEscolaRouteImport } from './routes/a-escola'
 import { Route as IndexRouteImport } from './routes/index'
 
+const VelhaGuardaRoute = VelhaGuardaRouteImport.update({
+  id: '/velha-guarda',
+  path: '/velha-guarda',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TitulosRoute = TitulosRouteImport.update({
+  id: '/titulos',
+  path: '/titulos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MestreSalaEPortaBandeirasRoute =
+  MestreSalaEPortaBandeirasRouteImport.update({
+    id: '/mestre-sala-e-porta-bandeiras',
+    path: '/mestre-sala-e-porta-bandeiras',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const InterpretesRoute = InterpretesRouteImport.update({
+  id: '/interpretes',
+  path: '/interpretes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiretoriaRoute = DiretoriaRouteImport.update({
+  id: '/diretoria',
+  path: '/diretoria',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComissaoDeFrenteRoute = ComissaoDeFrenteRouteImport.update({
+  id: '/comissao-de-frente',
+  path: '/comissao-de-frente',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Carnaval2026Route = Carnaval2026RouteImport.update({
+  id: '/carnaval-2026',
+  path: '/carnaval-2026',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BateriaRoute = BateriaRouteImport.update({
+  id: '/bateria',
+  path: '/bateria',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AlaDasBaianasRoute = AlaDasBaianasRouteImport.update({
+  id: '/ala-das-baianas',
+  path: '/ala-das-baianas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AEscolaRoute = AEscolaRouteImport.update({
+  id: '/a-escola',
+  path: '/a-escola',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +86,186 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/a-escola': typeof AEscolaRoute
+  '/ala-das-baianas': typeof AlaDasBaianasRoute
+  '/bateria': typeof BateriaRoute
+  '/carnaval-2026': typeof Carnaval2026Route
+  '/comissao-de-frente': typeof ComissaoDeFrenteRoute
+  '/contato': typeof ContatoRoute
+  '/diretoria': typeof DiretoriaRoute
+  '/interpretes': typeof InterpretesRoute
+  '/mestre-sala-e-porta-bandeiras': typeof MestreSalaEPortaBandeirasRoute
+  '/titulos': typeof TitulosRoute
+  '/velha-guarda': typeof VelhaGuardaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/a-escola': typeof AEscolaRoute
+  '/ala-das-baianas': typeof AlaDasBaianasRoute
+  '/bateria': typeof BateriaRoute
+  '/carnaval-2026': typeof Carnaval2026Route
+  '/comissao-de-frente': typeof ComissaoDeFrenteRoute
+  '/contato': typeof ContatoRoute
+  '/diretoria': typeof DiretoriaRoute
+  '/interpretes': typeof InterpretesRoute
+  '/mestre-sala-e-porta-bandeiras': typeof MestreSalaEPortaBandeirasRoute
+  '/titulos': typeof TitulosRoute
+  '/velha-guarda': typeof VelhaGuardaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/a-escola': typeof AEscolaRoute
+  '/ala-das-baianas': typeof AlaDasBaianasRoute
+  '/bateria': typeof BateriaRoute
+  '/carnaval-2026': typeof Carnaval2026Route
+  '/comissao-de-frente': typeof ComissaoDeFrenteRoute
+  '/contato': typeof ContatoRoute
+  '/diretoria': typeof DiretoriaRoute
+  '/interpretes': typeof InterpretesRoute
+  '/mestre-sala-e-porta-bandeiras': typeof MestreSalaEPortaBandeirasRoute
+  '/titulos': typeof TitulosRoute
+  '/velha-guarda': typeof VelhaGuardaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/a-escola'
+    | '/ala-das-baianas'
+    | '/bateria'
+    | '/carnaval-2026'
+    | '/comissao-de-frente'
+    | '/contato'
+    | '/diretoria'
+    | '/interpretes'
+    | '/mestre-sala-e-porta-bandeiras'
+    | '/titulos'
+    | '/velha-guarda'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/a-escola'
+    | '/ala-das-baianas'
+    | '/bateria'
+    | '/carnaval-2026'
+    | '/comissao-de-frente'
+    | '/contato'
+    | '/diretoria'
+    | '/interpretes'
+    | '/mestre-sala-e-porta-bandeiras'
+    | '/titulos'
+    | '/velha-guarda'
+  id:
+    | '__root__'
+    | '/'
+    | '/a-escola'
+    | '/ala-das-baianas'
+    | '/bateria'
+    | '/carnaval-2026'
+    | '/comissao-de-frente'
+    | '/contato'
+    | '/diretoria'
+    | '/interpretes'
+    | '/mestre-sala-e-porta-bandeiras'
+    | '/titulos'
+    | '/velha-guarda'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AEscolaRoute: typeof AEscolaRoute
+  AlaDasBaianasRoute: typeof AlaDasBaianasRoute
+  BateriaRoute: typeof BateriaRoute
+  Carnaval2026Route: typeof Carnaval2026Route
+  ComissaoDeFrenteRoute: typeof ComissaoDeFrenteRoute
+  ContatoRoute: typeof ContatoRoute
+  DiretoriaRoute: typeof DiretoriaRoute
+  InterpretesRoute: typeof InterpretesRoute
+  MestreSalaEPortaBandeirasRoute: typeof MestreSalaEPortaBandeirasRoute
+  TitulosRoute: typeof TitulosRoute
+  VelhaGuardaRoute: typeof VelhaGuardaRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/velha-guarda': {
+      id: '/velha-guarda'
+      path: '/velha-guarda'
+      fullPath: '/velha-guarda'
+      preLoaderRoute: typeof VelhaGuardaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/titulos': {
+      id: '/titulos'
+      path: '/titulos'
+      fullPath: '/titulos'
+      preLoaderRoute: typeof TitulosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mestre-sala-e-porta-bandeiras': {
+      id: '/mestre-sala-e-porta-bandeiras'
+      path: '/mestre-sala-e-porta-bandeiras'
+      fullPath: '/mestre-sala-e-porta-bandeiras'
+      preLoaderRoute: typeof MestreSalaEPortaBandeirasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/interpretes': {
+      id: '/interpretes'
+      path: '/interpretes'
+      fullPath: '/interpretes'
+      preLoaderRoute: typeof InterpretesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diretoria': {
+      id: '/diretoria'
+      path: '/diretoria'
+      fullPath: '/diretoria'
+      preLoaderRoute: typeof DiretoriaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comissao-de-frente': {
+      id: '/comissao-de-frente'
+      path: '/comissao-de-frente'
+      fullPath: '/comissao-de-frente'
+      preLoaderRoute: typeof ComissaoDeFrenteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/carnaval-2026': {
+      id: '/carnaval-2026'
+      path: '/carnaval-2026'
+      fullPath: '/carnaval-2026'
+      preLoaderRoute: typeof Carnaval2026RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bateria': {
+      id: '/bateria'
+      path: '/bateria'
+      fullPath: '/bateria'
+      preLoaderRoute: typeof BateriaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ala-das-baianas': {
+      id: '/ala-das-baianas'
+      path: '/ala-das-baianas'
+      fullPath: '/ala-das-baianas'
+      preLoaderRoute: typeof AlaDasBaianasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/a-escola': {
+      id: '/a-escola'
+      path: '/a-escola'
+      fullPath: '/a-escola'
+      preLoaderRoute: typeof AEscolaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,7 +278,28 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AEscolaRoute: AEscolaRoute,
+  AlaDasBaianasRoute: AlaDasBaianasRoute,
+  BateriaRoute: BateriaRoute,
+  Carnaval2026Route: Carnaval2026Route,
+  ComissaoDeFrenteRoute: ComissaoDeFrenteRoute,
+  ContatoRoute: ContatoRoute,
+  DiretoriaRoute: DiretoriaRoute,
+  InterpretesRoute: InterpretesRoute,
+  MestreSalaEPortaBandeirasRoute: MestreSalaEPortaBandeirasRoute,
+  TitulosRoute: TitulosRoute,
+  VelhaGuardaRoute: VelhaGuardaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
