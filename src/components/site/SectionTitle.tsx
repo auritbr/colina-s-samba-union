@@ -35,7 +35,7 @@ export function SectionTitle({
       )}
       <h2
         className={cn(
-          "mt-3 text-3xl font-extrabold leading-tight md:text-5xl",
+          "mt-3 h-section",
           invert ? "text-white" : "text-[color:var(--verde-profundo)]",
         )}
       >
@@ -44,8 +44,9 @@ export function SectionTitle({
       {description && (
         <p
           className={cn(
-            "mt-5 text-base leading-relaxed md:text-lg",
+            "mt-4 text-lede max-w-[65ch]",
             invert ? "text-white/75" : "text-[color:var(--cinza-texto)]",
+            align === "center" && "mx-auto",
           )}
         >
           {description}
