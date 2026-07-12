@@ -84,35 +84,35 @@ function Index() {
           className="pointer-events-none absolute -right-24 top-1/2 hidden -translate-y-1/2 h-[640px] w-[640px] opacity-10 md:block"
         />
 
-        <div className="container-uc relative flex min-h-[80vh] flex-col justify-center py-24 md:py-32">
+        <div className="container-uc relative flex min-h-[64vh] flex-col justify-center py-16 md:py-24 lg:min-h-[70vh]">
           <div className="fade-up max-w-3xl">
-            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 py-2 pl-2 pr-4 backdrop-blur">
-              <img src={brasao.url} alt="Brasão" className="h-8 w-8 object-contain" />
-              <span className="text-xs font-semibold uppercase tracking-[0.24em] text-[color:var(--dourado)]">
+            <div className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/5 py-1.5 pl-1.5 pr-4 backdrop-blur">
+              <img src={brasao.url} alt="Brasão" className="h-7 w-7 object-contain" />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[color:var(--dourado)]">
                 Desde 1947 · A primeira escola de samba da cidade
               </span>
             </div>
-            <h1 className="text-5xl font-extrabold leading-[1.05] md:text-7xl lg:text-8xl">
+            <h1 className="h-display">
               União <span className="text-[color:var(--verde-claro)]">da Colina</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-lg text-white/85 md:text-2xl">
+            <p className="mt-5 max-w-2xl text-lede text-white/85">
               A primeira escola de samba da cidade. Uma história construída por gerações.
             </p>
-            <p className="mt-4 max-w-xl text-sm text-white/60 md:text-base">
+            <p className="mt-3 max-w-xl text-[14px] text-white/60">
               Desde 1947, preservando a memória, a cultura e a força do samba.
             </p>
 
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 to="/a-escola"
-                className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-[color:var(--verde-profundo)] transition hover:bg-[color:var(--verde-claro)]"
+                className="btn-uc bg-white text-[color:var(--verde-profundo)] hover:bg-[color:var(--verde-claro)]"
               >
                 Conheça nossa história
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 to="/carnaval-2026"
-                className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3.5 text-sm font-semibold text-white transition hover:border-white hover:bg-white/5"
+                className="btn-uc border border-white/25 text-white hover:border-white hover:bg-white/5"
               >
                 Carnaval 2026
               </Link>
