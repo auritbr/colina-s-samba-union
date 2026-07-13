@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VelhaGuardaRouteImport } from './routes/velha-guarda'
 import { Route as TitulosRouteImport } from './routes/titulos'
+import { Route as MestreSalaEPortaBandeirasRouteImport } from './routes/mestre-sala-e-porta-bandeiras'
 import { Route as DiretoriaRouteImport } from './routes/diretoria'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as ComissaoDeFrenteRouteImport } from './routes/comissao-de-frente'
@@ -30,6 +31,12 @@ const TitulosRoute = TitulosRouteImport.update({
   path: '/titulos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MestreSalaEPortaBandeirasRoute =
+  MestreSalaEPortaBandeirasRouteImport.update({
+    id: '/mestre-sala-e-porta-bandeiras',
+    path: '/mestre-sala-e-porta-bandeiras',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const DiretoriaRoute = DiretoriaRouteImport.update({
   id: '/diretoria',
   path: '/diretoria',
@@ -80,6 +87,7 @@ export interface FileRoutesByFullPath {
   '/comissao-de-frente': typeof ComissaoDeFrenteRoute
   '/contato': typeof ContatoRoute
   '/diretoria': typeof DiretoriaRoute
+  '/mestre-sala-e-porta-bandeiras': typeof MestreSalaEPortaBandeirasRoute
   '/titulos': typeof TitulosRoute
   '/velha-guarda': typeof VelhaGuardaRoute
 }
@@ -92,6 +100,7 @@ export interface FileRoutesByTo {
   '/comissao-de-frente': typeof ComissaoDeFrenteRoute
   '/contato': typeof ContatoRoute
   '/diretoria': typeof DiretoriaRoute
+  '/mestre-sala-e-porta-bandeiras': typeof MestreSalaEPortaBandeirasRoute
   '/titulos': typeof TitulosRoute
   '/velha-guarda': typeof VelhaGuardaRoute
 }
@@ -105,6 +114,7 @@ export interface FileRoutesById {
   '/comissao-de-frente': typeof ComissaoDeFrenteRoute
   '/contato': typeof ContatoRoute
   '/diretoria': typeof DiretoriaRoute
+  '/mestre-sala-e-porta-bandeiras': typeof MestreSalaEPortaBandeirasRoute
   '/titulos': typeof TitulosRoute
   '/velha-guarda': typeof VelhaGuardaRoute
 }
@@ -119,6 +129,7 @@ export interface FileRouteTypes {
     | '/comissao-de-frente'
     | '/contato'
     | '/diretoria'
+    | '/mestre-sala-e-porta-bandeiras'
     | '/titulos'
     | '/velha-guarda'
   fileRoutesByTo: FileRoutesByTo
@@ -131,6 +142,7 @@ export interface FileRouteTypes {
     | '/comissao-de-frente'
     | '/contato'
     | '/diretoria'
+    | '/mestre-sala-e-porta-bandeiras'
     | '/titulos'
     | '/velha-guarda'
   id:
@@ -143,6 +155,7 @@ export interface FileRouteTypes {
     | '/comissao-de-frente'
     | '/contato'
     | '/diretoria'
+    | '/mestre-sala-e-porta-bandeiras'
     | '/titulos'
     | '/velha-guarda'
   fileRoutesById: FileRoutesById
@@ -156,6 +169,7 @@ export interface RootRouteChildren {
   ComissaoDeFrenteRoute: typeof ComissaoDeFrenteRoute
   ContatoRoute: typeof ContatoRoute
   DiretoriaRoute: typeof DiretoriaRoute
+  MestreSalaEPortaBandeirasRoute: typeof MestreSalaEPortaBandeirasRoute
   TitulosRoute: typeof TitulosRoute
   VelhaGuardaRoute: typeof VelhaGuardaRoute
 }
@@ -174,6 +188,13 @@ declare module '@tanstack/react-router' {
       path: '/titulos'
       fullPath: '/titulos'
       preLoaderRoute: typeof TitulosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mestre-sala-e-porta-bandeiras': {
+      id: '/mestre-sala-e-porta-bandeiras'
+      path: '/mestre-sala-e-porta-bandeiras'
+      fullPath: '/mestre-sala-e-porta-bandeiras'
+      preLoaderRoute: typeof MestreSalaEPortaBandeirasRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/diretoria': {
@@ -244,6 +265,7 @@ const rootRouteChildren: RootRouteChildren = {
   ComissaoDeFrenteRoute: ComissaoDeFrenteRoute,
   ContatoRoute: ContatoRoute,
   DiretoriaRoute: DiretoriaRoute,
+  MestreSalaEPortaBandeirasRoute: MestreSalaEPortaBandeirasRoute,
   TitulosRoute: TitulosRoute,
   VelhaGuardaRoute: VelhaGuardaRoute,
 }
