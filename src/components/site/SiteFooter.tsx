@@ -5,15 +5,9 @@ import { UnionColinaFooterOrnament } from "./UnionColinaFooterOrnament";
 
 export function SiteFooter() {
   return (
-    <footer
-      className="relative text-white"
-      style={{
-        background:
-          "linear-gradient(180deg, #0B5D35 0%, #063D25 45%, #032F1D 100%)",
-      }}
-    >
+    <footer className="relative bg-[color:var(--verde-profundo)] text-white">
       <UnionColinaFooterOrnament />
-      <div className="container-uc relative grid gap-8 pb-10 pt-8 md:grid-cols-4">
+      <div className="container-uc relative grid gap-8 pb-10 pt-6 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-3">
             <img src={brasao.url} alt="" className="h-9 w-9 object-contain" width={36} height={36} />
