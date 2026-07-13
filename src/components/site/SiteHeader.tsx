@@ -4,7 +4,7 @@ import { Menu, X, Instagram, ChevronDown } from "lucide-react";
 import brasao from "@/assets/brasao.png.asset.json";
 import { NAV } from "@/data/navigation";
 import { cn } from "@/lib/utils";
-import { BrandPattern } from "./BrandPattern";
+import { UnionColinaHeaderOrnament } from "./UnionColinaHeaderOrnament";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -27,10 +27,10 @@ export function SiteHeader() {
     !!to && (to === "/" ? pathname === "/" : pathname.startsWith(to));
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[color:var(--verde-profundo)] text-white backdrop-blur">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-        <BrandPattern variant="header" className="opacity-40" />
-      </div>
+    <header className="sticky top-0 z-50 text-white">
+      {/* Ornamental frame — structural composition, not just a texture */}
+      <div className="relative bg-[color:var(--verde-profundo)]">
+        <UnionColinaHeaderOrnament />
       <a
         href="#conteudo"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-2 focus:z-50 focus:rounded-md focus:bg-white focus:px-3 focus:py-1 focus:text-[color:var(--verde-profundo)]"
@@ -38,15 +38,23 @@ export function SiteHeader() {
         Pular para o conteúdo
       </a>
       <div className="container-uc relative flex h-[72px] items-center gap-6 lg:h-[84px]">
-        <Link to="/" className="flex items-center gap-3 shrink-0" aria-label="União da Colina — Início">
+        <Link to="/" className="relative flex items-center gap-3 shrink-0" aria-label="União da Colina — Início">
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute -left-2 top-1/2 h-[64px] w-[64px] -translate-y-1/2 rounded-full ring-1 ring-white/25 lg:h-[76px] lg:w-[76px]"
+          />
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute -left-1 top-1/2 h-[58px] w-[58px] -translate-y-1/2 rounded-full ring-[1px] ring-[color:var(--dourado)]/45 lg:h-[70px] lg:w-[70px]"
+          />
           <img
             src={brasao.url}
             alt="Brasão da União da Colina"
-            className="h-[54px] w-[54px] object-contain lg:h-[64px] lg:w-[64px]"
+            className="relative h-[54px] w-[54px] object-contain lg:h-[64px] lg:w-[64px]"
             width={64}
             height={64}
           />
-          <span className="hidden sm:flex flex-col leading-tight">
+          <span className="relative hidden sm:flex flex-col leading-tight">
             <span className="text-[10px] uppercase tracking-[0.22em] text-[color:var(--verde-claro)]/80">
               G.R.E.S.
             </span>
@@ -128,6 +136,7 @@ export function SiteHeader() {
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
+      </div>
       </div>
 
       {/* Mobile panel */}
