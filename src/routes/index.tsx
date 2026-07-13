@@ -216,23 +216,19 @@ function Index() {
       </section>
 
       {/* MEMÓRIA VIVA */}
-      <section className="relative bg-[color:var(--verde-profundo)] text-white">
-        <img
-          src={bgMemoriaViva.url}
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 -z-10 h-full w-full object-cover"
-          loading="lazy"
-        />
+      <section
+        className="relative isolate overflow-hidden bg-cover bg-center bg-no-repeat text-white"
+        style={{
+          backgroundColor: "#043D25",
+          backgroundImage: `url('${bgMemoriaViva.url}')`,
+        }}
+      >
         <div
           aria-hidden="true"
-          className="absolute inset-0 -z-10"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(3,47,29,0.55) 0%, rgba(3,47,29,0.35) 50%, rgba(3,47,29,0.65) 100%)",
-          }}
+          className="pointer-events-none absolute inset-0"
+          style={{ background: "rgba(2, 48, 29, 0.18)" }}
         />
-        <div className="container-uc relative py-14 md:py-20">
+        <div className="container-uc relative z-10 py-14 md:py-20">
           <SectionTitle
             eyebrow="Memória viva"
             title="A história permanece nas lembranças"
@@ -242,7 +238,11 @@ function Index() {
           />
           <div className="mt-14 grid gap-6 md:grid-cols-3">
             {[1, 2, 3].map((i) => (
-              <article key={i} className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+              <article
+                key={i}
+                className="rounded-2xl border border-white/15 p-6 backdrop-blur"
+                style={{ background: "rgba(6, 57, 35, 0.72)" }}
+              >
                 <div className="flex items-center gap-3">
                   <div className="grid h-14 w-14 place-items-center rounded-full bg-white/10 text-white/70">
                     <Users className="h-6 w-6" />

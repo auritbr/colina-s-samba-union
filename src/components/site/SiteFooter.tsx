@@ -1,10 +1,12 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 import brasao from "@/assets/brasao.png.asset.json";
+import { FooterBrandPattern } from "@/components/site/FooterBrandPattern";
 export function SiteFooter() {
   return (
-    <footer className="relative bg-[color:var(--verde-profundo)] text-white">
-      <div className="container-uc relative grid gap-8 pb-10 pt-6 md:grid-cols-4">
+    <footer className="relative overflow-hidden bg-[color:var(--verde-profundo)] text-white">
+      <FooterBrandPattern />
+      <div className="container-uc relative z-10 grid gap-8 pb-10 pt-10 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-3">
             <img src={brasao.url} alt="" className="h-9 w-9 object-contain" width={36} height={36} />
@@ -61,7 +63,7 @@ export function SiteFooter() {
           </li>
         </FooterCol>
       </div>
-      <div className="relative border-t border-white/10">
+      <div className="relative z-10 border-t border-white/10">
         <div className="container-uc flex flex-col items-center justify-between gap-2 py-4 text-[11.5px] text-white/60 md:flex-row">
           <p>© {new Date().getFullYear()} G.R.E.S. União da Colina — Todos os direitos reservados.</p>
           <p>

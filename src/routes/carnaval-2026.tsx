@@ -5,6 +5,7 @@ import { EmptyState } from "@/components/site/SegmentSections";
 import { Calendar, Music, PlayCircle } from "lucide-react";
 import hero from "@/assets/hero-desfile.jpg";
 import pavilhao from "@/assets/pavilhao.jpg";
+import bgOrnamental from "@/assets/bg-verde-ornamental.png.asset.json";
 
 export const Route = createFileRoute("/carnaval-2026")({
   head: () => ({
@@ -57,14 +58,28 @@ function Carnaval() {
         </div>
       </section>
 
-      <section className="bg-[color:var(--verde-profundo)] text-white">
-        <div className="container-uc section-y">
+      <section
+        className="relative isolate overflow-hidden bg-cover bg-center bg-no-repeat text-white"
+        style={{
+          backgroundColor: "#043D25",
+          backgroundImage: `url('${bgOrnamental.url}')`,
+        }}
+      >
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{ background: "rgba(2, 48, 29, 0.18)" }}
+        />
+        <div className="container-uc relative z-10 section-y">
           <div className="grid gap-10 md:grid-cols-2">
             <div>
               <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.28em] text-[color:var(--dourado)]"><Music className="h-4 w-4" /> Samba-enredo</div>
               <h3 className="mt-3 h-section text-white">Samba-enredo em breve</h3>
               <p className="mt-3 text-lede text-white/80">A letra completa, os autores e o áudio oficial estarão disponíveis assim que forem divulgados.</p>
-              <div className="mt-5 flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-3">
+              <div
+                className="mt-5 flex items-center gap-3 rounded-xl border border-white/15 p-3 backdrop-blur"
+                style={{ background: "rgba(7, 61, 38, 0.76)" }}
+              >
                 <PlayCircle className="h-9 w-9 text-white/80" />
                 <div className="flex-1">
                   <div className="h-1.5 rounded-full bg-white/10"><div className="h-1.5 w-1/4 rounded-full bg-[color:var(--dourado)]" /></div>
@@ -77,7 +92,11 @@ function Carnaval() {
               <h3 className="mt-3 h-section text-white">Ensaios abertos à comunidade</h3>
               <ul className="mt-5 space-y-2.5">
                 {[1,2,3].map((i) => (
-                  <li key={i} className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 p-3.5">
+                  <li
+                    key={i}
+                    className="flex items-center justify-between rounded-xl border border-white/15 p-3.5 backdrop-blur"
+                    style={{ background: "rgba(7, 61, 38, 0.76)" }}
+                  >
                     <div>
                       <p className="font-bold text-[15px]">Data em atualização</p>
                       <p className="text-[13px] text-white/70">Local e horário em atualização</p>

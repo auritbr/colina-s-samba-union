@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, CalendarDays, Newspaper, Tag } from "lucide-react";
+import { ArrowRight, CalendarDays, Newspaper } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { SectionTitle } from "@/components/site/SectionTitle";
 import { PlaceholderNote } from "@/components/site/PlaceholderNote";
@@ -24,15 +24,6 @@ export const Route = createFileRoute("/noticias")({
 
 const categorias = ["Todas", "Escola", "Bateria", "Comunidade", "Eventos", "Institucional"];
 
-const destaque = {
-  categoria: "Escola",
-  data: "Em atualização",
-  titulo: "Novidades da União da Colina em breve",
-  resumo:
-    "Este é o espaço oficial de comunicados da escola. Ensaios, eventos, entrevistas e notas institucionais serão publicados aqui assim que confirmados pela diretoria.",
-  imagem: historia,
-};
-
 const noticias = [
   { categoria: "Bateria", data: "Em breve", titulo: "Ensaios da bateria", resumo: "Datas, horários e locais serão divulgados após confirmação.", imagem: bateria },
   { categoria: "Comunidade", data: "Em breve", titulo: "Encontros da comunidade", resumo: "Ações comunitárias e mobilizações da escola no bairro.", imagem: baianas },
@@ -53,30 +44,14 @@ function Noticias() {
         image={pavilhao}
       />
 
-      {/* Destaque */}
+      {/* Introdução */}
       <section className="bg-background">
-        <div className="container-uc section-y">
+        <div className="container-uc pt-14 md:pt-20">
           <SectionTitle
-            eyebrow="Em destaque"
-            title="A notícia mais recente"
-            description="Um espaço dedicado a manter a comunidade informada sobre o que acontece na escola."
+            eyebrow="Comunicados"
+            title="Últimas notícias"
+            description="Acompanhe os comunicados, eventos e novidades da União da Colina."
           />
-          <article className="mt-10 grid gap-8 overflow-hidden rounded-3xl border border-[color:var(--verde-claro)] bg-white shadow-sm md:grid-cols-5">
-            <div className="relative md:col-span-3">
-              <img src={destaque.imagem} alt="" className="h-full max-h-[440px] w-full object-cover" loading="lazy" />
-              <span className="absolute left-5 top-5 inline-flex items-center gap-1.5 rounded-full bg-[color:var(--verde-profundo)] px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
-                <Tag className="h-3 w-3" /> {destaque.categoria}
-              </span>
-            </div>
-            <div className="flex flex-col justify-center gap-5 p-8 md:col-span-2">
-              <p className="inline-flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.2em] text-[color:var(--verde-medio)]">
-                <CalendarDays className="h-3.5 w-3.5" /> {destaque.data}
-              </p>
-              <h3 className="text-2xl font-bold text-[color:var(--verde-profundo)] md:text-3xl">{destaque.titulo}</h3>
-              <p className="text-[15px] leading-relaxed text-[color:var(--cinza-texto)]">{destaque.resumo}</p>
-              <PlaceholderNote>Conteúdo em atualização</PlaceholderNote>
-            </div>
-          </article>
         </div>
       </section>
 
@@ -84,12 +59,9 @@ function Noticias() {
       <section className="bg-[color:var(--cinza-claro)]">
         <div className="container-uc section-y">
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-            <SectionTitle
-              eyebrow="Últimas publicações"
-              title="Todas as notícias"
-              description="Filtre por categoria para acompanhar assuntos específicos."
-              className="mt-0"
-            />
+            <div className="text-[13.5px] text-[color:var(--cinza-texto)]">
+              Filtre por categoria para acompanhar assuntos específicos.
+            </div>
             <div className="flex flex-wrap gap-2">
               {categorias.map((c, i) => (
                 <button
@@ -131,7 +103,7 @@ function Noticias() {
           </div>
 
           <div className="mt-10 mx-auto max-w-3xl">
-            <PlaceholderNote>A publicação de notícias começará assim que o fluxo editorial for validado com a diretoria da escola.</PlaceholderNote>
+            <PlaceholderNote>Novas publicações serão adicionadas em breve.</PlaceholderNote>
           </div>
         </div>
       </section>
