@@ -121,6 +121,22 @@ function Index() {
           </div>
         </div>
 
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+          className="block h-12 w-full text-background md:h-16"
+        >
+          <path
+            d="M0,50 C120,20 220,70 360,48 C500,26 620,72 780,50 C920,30 1060,74 1200,52 C1320,32 1400,66 1440,44 L1440,80 L0,80 Z"
+            fill="currentColor"
+          />
+          <path
+            d="M0,58 C160,34 300,78 460,60 C620,42 760,80 920,62 C1080,44 1240,78 1440,58 L1440,80 L0,80 Z"
+            fill="currentColor"
+            opacity="0.55"
+          />
+        </svg>
       </section>
 
       {/* Faixa ornamental — transição pós-hero */}
