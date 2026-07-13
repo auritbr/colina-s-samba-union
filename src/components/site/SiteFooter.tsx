@@ -2,10 +2,12 @@ import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 import brasao from "@/assets/brasao.png.asset.json";
 import { UnionColinaFooterOrnament } from "./UnionColinaFooterOrnament";
+import { OrnamentBand } from "./OrnamentBand";
 
 export function SiteFooter() {
   return (
     <footer className="relative bg-[color:var(--verde-profundo)] text-white">
+      <OrnamentBand variant="footer" className="-mb-px" />
       <UnionColinaFooterOrnament />
       <div className="container-uc relative grid gap-8 pb-10 pt-6 md:grid-cols-4">
         <div>
