@@ -1,7 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
-import { SectionTitle } from "@/components/site/SectionTitle";
-import { PlaceholderNote } from "@/components/site/PlaceholderNote";
+import { Sparkles, HeartHandshake, BookOpen, Flame } from "lucide-react";
+import {
+  SegmentAbout,
+  SegmentTrajectory,
+  SegmentRoleCards,
+  SegmentMembers,
+  SegmentTimeline,
+  SegmentTestimonials,
+  SegmentGallery,
+  SegmentRelated,
+} from "@/components/site/SegmentSections";
 import baianas from "@/assets/baianas.jpg";
 
 export const Route = createFileRoute("/ala-das-baianas")({
@@ -19,34 +28,60 @@ export const Route = createFileRoute("/ala-das-baianas")({
 function Baianas() {
   return (
     <>
-      <PageHero title="Ala das Baianas" subtitle="Ancestralidade, resistência e tradição na avenida." image={baianas} />
-      <section className="bg-background">
-        <div className="container-uc grid gap-12 py-20 md:grid-cols-2 md:py-28">
-          <div>
-            <SectionTitle eyebrow="Tradição" title="O giro das saias que carrega a história" description="A Ala das Baianas é uma das mais importantes tradições do samba brasileiro. Na União da Colina, representa força, ancestralidade e devoção — presença obrigatória em cada desfile." />
-            <div className="mt-6"><PlaceholderNote>Integrantes, trajes e depoimentos em atualização</PlaceholderNote></div>
-          </div>
-          <div className="relative overflow-hidden rounded-[36px] border-8 border-[color:var(--verde-claro)]">
-            <img src={baianas} alt="Ala das baianas" className="h-full w-full object-cover" loading="lazy" />
-          </div>
-        </div>
-      </section>
-      <section className="bg-[color:var(--cinza-claro)]">
-        <div className="container-uc py-20">
-          <SectionTitle eyebrow="Integrantes" title="As baianas da União da Colina" />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {[1,2,3,4,5,6,7,8].map((i) => (
-              <article key={i} className="overflow-hidden rounded-2xl bg-white shadow-sm">
-                <div className="aspect-square bg-[color:var(--verde-claro)]" />
-                <div className="p-4">
-                  <h3 className="font-bold text-[color:var(--verde-profundo)]">Nome em atualização</h3>
-                  <p className="text-xs text-[color:var(--cinza-texto)]">Integrante da ala</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Ala das Baianas"
+        title="Ancestralidade que gira na avenida"
+        subtitle="Tradição, resistência e devoção em cada desfile."
+        image={baianas}
+        breadcrumb="Ala das Baianas"
+      />
+
+      <SegmentAbout
+        title="O giro das saias que carrega a história"
+        eyebrow="Tradição"
+        image={baianas}
+        paragraphs={[
+          "A Ala das Baianas é uma das mais importantes tradições do samba brasileiro. Na União da Colina, representa força, ancestralidade e devoção — presença fundamental em cada desfile.",
+          "É também um espaço de encontro entre gerações, de transmissão de saberes e de valorização das mulheres que sustentam a memória e a espiritualidade do samba.",
+          "Os registros históricos, integrantes e depoimentos deste segmento estão em processo de organização e serão acrescentados ao acervo digital da União da Colina.",
+        ]}
+      />
+
+      <SegmentRoleCards
+        title="Significado e importância"
+        eyebrow="Ancestralidade"
+        items={[
+          { icon: Flame, t: "Ancestralidade", d: "Presença que remete às matrizes afro-brasileiras que sustentam culturalmente o samba." },
+          { icon: Sparkles, t: "Tradição", d: "Segmento fundamental em uma escola de samba, respeitado pelas ligas e escolas irmãs." },
+          { icon: HeartHandshake, t: "Resistência", d: "Espaço de força coletiva, afeto e permanência das mulheres na história da escola." },
+          { icon: BookOpen, t: "Transmissão", d: "Passagem de saberes, cantos e movimentos para as novas gerações de sambistas." },
+        ]}
+      />
+
+      <SegmentTrajectory
+        title="A trajetória da ala"
+        items={[
+          { t: "Origem", d: "Os primeiros registros da ala na União da Colina estão em processo de pesquisa a partir de fontes e depoimentos." },
+          { t: "Integrantes históricas", d: "Nomes e períodos serão publicados após validação com a comunidade da escola." },
+          { t: "Integrantes atuais", d: "Composição atual em atualização." },
+          { t: "Vestimentas e trajes", d: "Registros de fantasias, saias e adereços em processo de digitalização." },
+          { t: "Participação nos desfiles", d: "Marcos das apresentações em atualização." },
+          { t: "Homenagens", d: "Espaço para reconhecer baianas homenageadas pela escola." },
+        ]}
+      />
+
+      <SegmentMembers title="As baianas da União da Colina" eyebrow="Integrantes" />
+      <SegmentTimeline title="Marcos da ala" />
+      <SegmentTestimonials />
+      <SegmentGallery />
+      <SegmentRelated
+        items={[
+          { t: "Velha Guarda", to: "/velha-guarda" },
+          { t: "Bateria", to: "/bateria" },
+          { t: "Mestre-Sala e Porta-Bandeiras", to: "/mestre-sala-e-porta-bandeiras" },
+          { t: "A Escola", to: "/a-escola" },
+        ]}
+      />
     </>
   );
 }

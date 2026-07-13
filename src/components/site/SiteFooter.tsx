@@ -1,21 +1,29 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 import brasao from "@/assets/brasao.png.asset.json";
+import { BrandPattern } from "./BrandPattern";
 
 export function SiteFooter() {
   return (
-    <footer className="relative bg-[color:var(--verde-profundo)] text-white">
+    <footer className="relative overflow-hidden bg-[color:var(--verde-profundo)] text-white">
       <OrganicTop />
-      <div className="container-uc grid gap-10 py-16 md:grid-cols-4">
+      <BrandPattern variant="footer" className="opacity-30" />
+      <img
+        src={brasao.url}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-16 top-1/2 hidden h-[320px] w-[320px] -translate-y-1/2 opacity-[0.06] md:block"
+      />
+      <div className="container-uc relative grid gap-8 py-12 md:grid-cols-4 md:py-14">
         <div>
           <div className="flex items-center gap-3">
-            <img src={brasao.url} alt="" className="h-14 w-14 object-contain" width={56} height={56} />
+            <img src={brasao.url} alt="" className="h-12 w-12 object-contain" width={48} height={48} />
             <div className="leading-tight">
               <p className="text-[10px] uppercase tracking-[0.22em] text-[color:var(--verde-claro)]/80">G.R.E.S.</p>
-              <p className="text-lg font-bold">União da Colina</p>
+              <p className="text-base font-bold">União da Colina</p>
             </div>
           </div>
-          <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/70">
+          <p className="mt-3 max-w-xs text-[13.5px] leading-relaxed text-white/70">
             Preservando a memória, a cultura e a tradição do samba desde 1947.
           </p>
           <div className="mt-5 flex gap-2">
@@ -63,8 +71,8 @@ export function SiteFooter() {
           </li>
         </FooterCol>
       </div>
-      <div className="border-t border-white/10">
-        <div className="container-uc flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/60 md:flex-row">
+      <div className="relative border-t border-white/10">
+        <div className="container-uc flex flex-col items-center justify-between gap-3 py-5 text-xs text-white/60 md:flex-row">
           <p>© {new Date().getFullYear()} G.R.E.S. União da Colina — Todos os direitos reservados.</p>
           <p>
             <Link to="/contato" className="hover:text-white">Política de privacidade</Link>

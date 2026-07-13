@@ -42,30 +42,30 @@ function Contato() {
 
   return (
     <>
-      <PageHero title="Contato" subtitle="Fale com a União da Colina." />
+      <PageHero title="Contato" eyebrow="Fale conosco" subtitle="Fale com a União da Colina." breadcrumb="Contato" />
       <section className="bg-background">
-        <div className="container-uc grid gap-12 py-20 md:grid-cols-[1.2fr_1fr] md:py-28">
-          <div>
+        <div className="container-uc section-y grid gap-10 md:grid-cols-[1fr_360px] md:gap-14">
+          <div className="max-w-[680px]">
             <SectionTitle eyebrow="Formulário" title="Envie a sua mensagem" />
-            <form onSubmit={onSubmit} noValidate className="mt-8 grid gap-5">
+            <form onSubmit={onSubmit} noValidate className="mt-6 grid gap-4">
               <Field label="Nome" name="nome" error={errors.nome} />
-              <div className="grid gap-5 sm:grid-cols-2">
+              <div className="grid gap-4 sm:grid-cols-2">
                 <Field label="E-mail" name="email" type="email" error={errors.email} />
                 <Field label="Telefone" name="telefone" type="tel" />
               </div>
               <div>
                 <label className="mb-1.5 block text-sm font-semibold text-[color:var(--verde-profundo)]" htmlFor="assunto">Assunto</label>
-                <select id="assunto" name="assunto" className="w-full rounded-lg border border-[color:var(--verde-claro)] bg-white px-4 py-3 text-sm focus:border-[color:var(--verde)] focus:outline-none focus:ring-2 focus:ring-[color:var(--verde-medio)]/30">
+                <select id="assunto" name="assunto" className="h-12 w-full rounded-lg border border-[color:var(--verde-claro)] bg-white px-3.5 text-[15px] focus:border-[color:var(--verde)] focus:outline-none focus:ring-2 focus:ring-[color:var(--verde-medio)]/30">
                   {assuntos.map((a) => (<option key={a}>{a}</option>))}
                 </select>
               </div>
               <div>
                 <label className="mb-1.5 block text-sm font-semibold text-[color:var(--verde-profundo)]" htmlFor="mensagem">Mensagem</label>
-                <textarea id="mensagem" name="mensagem" rows={5} className="w-full rounded-lg border border-[color:var(--verde-claro)] bg-white px-4 py-3 text-sm focus:border-[color:var(--verde)] focus:outline-none focus:ring-2 focus:ring-[color:var(--verde-medio)]/30" aria-invalid={!!errors.mensagem} />
+                <textarea id="mensagem" name="mensagem" rows={5} className="min-h-[140px] w-full rounded-lg border border-[color:var(--verde-claro)] bg-white px-3.5 py-3 text-[15px] focus:border-[color:var(--verde)] focus:outline-none focus:ring-2 focus:ring-[color:var(--verde-medio)]/30" aria-invalid={!!errors.mensagem} />
                 {errors.mensagem && <p className="mt-1 flex items-center gap-1 text-xs text-red-600"><AlertCircle className="h-3.5 w-3.5" />{errors.mensagem}</p>}
               </div>
-              <div className="flex items-center justify-between gap-4">
-                <button type="submit" className="inline-flex items-center gap-2 rounded-full bg-[color:var(--verde)] px-6 py-3 text-sm font-semibold text-white hover:bg-[color:var(--verde-escuro)]">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <button type="submit" className="btn-uc bg-[color:var(--verde)] text-white hover:bg-[color:var(--verde-escuro)]">
                   Enviar mensagem
                 </button>
                 {status === "ok" && (
@@ -77,22 +77,17 @@ function Contato() {
               </div>
             </form>
           </div>
-          <aside className="rounded-3xl border border-[color:var(--verde-claro)] bg-[color:var(--cinza-claro)] p-8">
-            <h3 className="text-xl font-bold text-[color:var(--verde-profundo)]">Informações de contato</h3>
-            <ul className="mt-6 space-y-4 text-sm">
+          <aside className="rounded-2xl border border-[color:var(--verde-claro)] bg-[color:var(--cinza-claro)] p-6 md:h-fit">
+            <h3 className="text-[17px] font-bold text-[color:var(--verde-profundo)]">Informações de contato</h3>
+            <ul className="mt-5 space-y-3 text-sm">
               <InfoLine icon={MapPin} title="Endereço" text="Em atualização" />
               <InfoLine icon={Phone} title="Telefone" text="Em atualização" />
               <InfoLine icon={Mail} title="E-mail" text="contato@uniaodacolina.org" />
               <InfoLine icon={Instagram} title="Instagram" text="@uniaodacolina" />
             </ul>
-            <div className="mt-6 rounded-2xl border border-[color:var(--verde-claro)] bg-white p-5">
-              <h4 className="text-sm font-bold uppercase tracking-wider text-[color:var(--verde-profundo)]">Horários</h4>
-              <p className="mt-2 text-sm text-[color:var(--cinza-texto)]">Horários de atendimento e ensaios em atualização.</p>
-            </div>
-            <div className="mt-6 overflow-hidden rounded-2xl border border-[color:var(--verde-claro)]">
-              <div className="aspect-[4/3] w-full bg-[color:var(--verde-claro)]/60 grid place-items-center text-sm text-[color:var(--cinza-texto)]">
-                Mapa incorporado em breve
-              </div>
+            <div className="mt-5 rounded-xl border border-[color:var(--verde-claro)] bg-white p-4">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-[color:var(--verde-profundo)]">Horários</h4>
+              <p className="mt-1.5 text-[13.5px] text-[color:var(--cinza-texto)]">Horários de atendimento e ensaios em atualização.</p>
             </div>
           </aside>
         </div>
@@ -110,7 +105,7 @@ function Field({ label, name, type = "text", error }: { label: string; name: str
         name={name}
         type={type}
         aria-invalid={!!error}
-        className="w-full rounded-lg border border-[color:var(--verde-claro)] bg-white px-4 py-3 text-sm focus:border-[color:var(--verde)] focus:outline-none focus:ring-2 focus:ring-[color:var(--verde-medio)]/30"
+        className="h-12 w-full rounded-lg border border-[color:var(--verde-claro)] bg-white px-3.5 text-[15px] focus:border-[color:var(--verde)] focus:outline-none focus:ring-2 focus:ring-[color:var(--verde-medio)]/30"
       />
       {error && <p className="mt-1 flex items-center gap-1 text-xs text-red-600"><AlertCircle className="h-3.5 w-3.5" />{error}</p>}
     </div>
@@ -120,10 +115,10 @@ function Field({ label, name, type = "text", error }: { label: string; name: str
 function InfoLine({ icon: Icon, title, text }: { icon: React.ElementType; title: string; text: string }) {
   return (
     <li className="flex items-start gap-3">
-      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white text-[color:var(--verde-profundo)]"><Icon className="h-4 w-4" /></span>
+      <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white text-[color:var(--verde-profundo)]"><Icon className="h-4 w-4" /></span>
       <div>
         <p className="text-xs font-bold uppercase tracking-wider text-[color:var(--verde-profundo)]">{title}</p>
-        <p className="text-sm text-[color:var(--cinza-texto)]">{text}</p>
+        <p className="text-[13.5px] text-[color:var(--cinza-texto)]">{text}</p>
       </div>
     </li>
   );
