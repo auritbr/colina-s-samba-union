@@ -5,6 +5,27 @@ import { FooterBrandPattern } from "@/components/site/FooterBrandPattern";
 export function SiteFooter() {
   return (
     <footer className="relative overflow-hidden bg-[color:var(--verde-profundo)] text-white">
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 1440 60"
+        preserveAspectRatio="none"
+        className="pointer-events-none absolute inset-x-0 top-0 z-10 block h-8 w-full md:h-10"
+      >
+        <path
+          d="M0,28 C220,6 440,44 720,26 C1000,8 1220,44 1440,22"
+          fill="none"
+          stroke="rgba(220, 239, 227, 0.28)"
+          strokeWidth="1"
+          strokeLinecap="round"
+        />
+        <path
+          d="M0,40 C260,20 520,52 780,34 C1040,16 1260,50 1440,36"
+          fill="none"
+          stroke="rgba(200, 168, 78, 0.55)"
+          strokeWidth="1.1"
+          strokeLinecap="round"
+        />
+      </svg>
       <FooterBrandPattern />
       <div className="container-uc relative z-10 grid gap-8 pb-10 pt-10 md:grid-cols-4">
         <div>
