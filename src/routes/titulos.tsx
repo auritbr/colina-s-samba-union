@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { SectionTitle } from "@/components/site/SectionTitle";
 import { EmptyState } from "@/components/site/SegmentSections";
-import { Award, Medal, Trophy } from "lucide-react";
+import { Award, Crown, Medal, Trophy } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import pavilhao from "@/assets/pavilhao.jpg";
 
@@ -58,23 +58,31 @@ function Titulos() {
       {/* Seção Campeã */}
       <section className="bg-[color:var(--verde-escuro)] text-white">
         <div className="container-uc section-y">
-          <SectionTitle
-            invert
-            eyebrow="Campeã"
-            title="Anos de título"
-            description="Carnavais em que a União da Colina cruzou a linha de chegada em primeiro lugar."
-          />
+          <div className="flex flex-col items-center text-center">
+            <span className="grid h-16 w-16 place-items-center rounded-full border border-[color:var(--dourado)]/50 bg-[color:var(--dourado)]/10">
+              <Crown className="h-8 w-8 text-[color:var(--dourado)]" />
+            </span>
+            <SectionTitle
+              invert
+              align="center"
+              eyebrow="Campeã"
+              title="Anos de título"
+              description="Carnavais em que a União da Colina cruzou a linha de chegada em primeiro lugar."
+              className="mt-5"
+            />
+            <span aria-hidden="true" className="mt-6 block h-px w-24 bg-[color:var(--dourado)]/60" />
+          </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {Array.from({ length: 4 }).map((_, i) => (
-              <article key={i} className="relative overflow-hidden rounded-2xl border border-[color:var(--dourado)]/40 bg-gradient-to-b from-white/10 to-white/[0.02] p-5">
-                <div className="flex items-center justify-between">
-                  <Trophy className="h-7 w-7 text-[color:var(--dourado)]" />
-                  <span className="rounded-full bg-[color:var(--dourado)]/15 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.18em] text-[color:var(--dourado)]">Campeã</span>
-                </div>
-                <p className="mt-4 text-2xl font-extrabold">Ano</p>
-                <p className="mt-0.5 text-[11px] font-semibold uppercase tracking-wider text-white/70">Categoria em atualização</p>
-                <h3 className="mt-3 text-[15px] font-bold">Enredo</h3>
-                <p className="mt-1.5 text-[13px] text-white/70">Sinopse em atualização.</p>
+              <article
+                key={i}
+                className="rounded-2xl border-2 border-[color:var(--dourado)]/70 bg-[#FBF7EA] p-5 shadow-md"
+              >
+                <Trophy className="h-7 w-7 text-[color:var(--dourado)]" />
+                <p className="mt-4 text-2xl font-extrabold text-[color:var(--verde-profundo)]">Ano</p>
+                <p className="mt-0.5 text-[11px] font-semibold uppercase tracking-wider text-[color:var(--verde-medio)]">Categoria em atualização</p>
+                <h3 className="mt-3 text-[15px] font-bold text-[color:var(--verde-profundo)]">Enredo</h3>
+                <p className="mt-1.5 text-[13px] text-[color:var(--cinza-texto)]">Sinopse em atualização.</p>
               </article>
             ))}
           </div>
@@ -84,20 +92,28 @@ function Titulos() {
       {/* Seção Vice-campeã */}
       <section className="bg-[color:var(--verde-claro)]/40">
         <div className="container-uc section-y">
-          <SectionTitle
-            eyebrow="Vice-campeã"
-            title="Segundos lugares memoráveis"
-            description="Carnavais em que a escola esteve entre as melhores da avenida, conquistando o vice-campeonato."
-          />
+          <div className="flex flex-col items-center text-center">
+            <span className="grid h-16 w-16 place-items-center rounded-full border border-[#B8BDC4] bg-[#EEF1F4]">
+              <Medal className="h-8 w-8 text-[#8A929B]" />
+            </span>
+            <SectionTitle
+              align="center"
+              eyebrow="Vice-campeã"
+              title="Segundos lugares memoráveis"
+              description="Carnavais em que a escola esteve entre as melhores da avenida, conquistando o vice-campeonato."
+              className="mt-5"
+            />
+            <span aria-hidden="true" className="mt-6 block h-px w-24 bg-[#B8BDC4]" />
+          </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {Array.from({ length: 4 }).map((_, i) => (
-              <article key={i} className="rounded-2xl border border-[color:var(--verde-claro)] bg-white p-5 shadow-sm">
-                <div className="flex items-center justify-between">
-                  <Medal className="h-7 w-7 text-[color:var(--verde-medio)]" />
-                  <span className="rounded-full bg-[color:var(--verde-claro)] px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.18em] text-[color:var(--verde-profundo)]">Vice</span>
-                </div>
+              <article
+                key={i}
+                className="rounded-2xl border-2 border-[#C7CCD3] bg-white p-5 shadow-md"
+              >
+                <Medal className="h-7 w-7 text-[#8A929B]" />
                 <p className="mt-4 text-2xl font-extrabold text-[color:var(--verde-profundo)]">Ano</p>
-                <p className="mt-0.5 text-[11px] font-semibold uppercase tracking-wider text-[color:var(--cinza-texto)]">Categoria em atualização</p>
+                <p className="mt-0.5 text-[11px] font-semibold uppercase tracking-wider text-[color:var(--verde-medio)]">Categoria em atualização</p>
                 <h3 className="mt-3 text-[15px] font-bold text-[color:var(--verde-profundo)]">Enredo</h3>
                 <p className="mt-1.5 text-[13px] text-[color:var(--cinza-texto)]">Sinopse em atualização.</p>
               </article>
