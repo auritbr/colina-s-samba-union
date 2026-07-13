@@ -1,40 +1,33 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 import brasao from "@/assets/brasao.png.asset.json";
-import { BrandPattern } from "./BrandPattern";
+import { UnionColinaFooterOrnament } from "./UnionColinaFooterOrnament";
 
 export function SiteFooter() {
   return (
-    <footer className="relative overflow-hidden bg-[color:var(--verde-profundo)] text-white">
-      <OrganicTop />
-      <BrandPattern variant="footer" className="opacity-30" />
-      <img
-        src={brasao.url}
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-16 top-1/2 hidden h-[320px] w-[320px] -translate-y-1/2 opacity-[0.06] md:block"
-      />
-      <div className="container-uc relative grid gap-8 py-12 md:grid-cols-4 md:py-14">
+    <footer className="relative bg-[color:var(--verde-profundo)] text-white">
+      <UnionColinaFooterOrnament />
+      <div className="container-uc relative grid gap-8 pb-10 pt-6 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-3">
-            <img src={brasao.url} alt="" className="h-12 w-12 object-contain" width={48} height={48} />
+            <img src={brasao.url} alt="" className="h-9 w-9 object-contain" width={36} height={36} />
             <div className="leading-tight">
-              <p className="text-[10px] uppercase tracking-[0.22em] text-[color:var(--verde-claro)]/80">G.R.E.S.</p>
-              <p className="text-base font-bold">União da Colina</p>
+              <p className="text-[9px] uppercase tracking-[0.22em] text-[color:var(--verde-claro)]/80">G.R.E.S.</p>
+              <p className="text-[14px] font-bold">União da Colina</p>
             </div>
           </div>
-          <p className="mt-3 max-w-xs text-[13.5px] leading-relaxed text-white/70">
+          <p className="mt-2.5 max-w-xs text-[12.5px] leading-relaxed text-white/70">
             Preservando a memória, a cultura e a tradição do samba desde 1947.
           </p>
-          <div className="mt-5 flex gap-2">
+          <div className="mt-4 flex gap-2">
             <a
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/85 transition hover:border-white/40"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/85 transition hover:border-white/40"
             >
-              <Instagram className="h-4 w-4" />
+              <Instagram className="h-3.5 w-3.5" />
             </a>
           </div>
         </div>
@@ -57,22 +50,22 @@ export function SiteFooter() {
         </FooterCol>
 
         <FooterCol title="Contato">
-          <li className="flex items-start gap-2 text-sm text-white/75">
-            <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--dourado)]" />
+          <li className="flex items-start gap-2 text-[13px] text-white/75">
+            <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[color:var(--dourado)]" />
             <span>Endereço em atualização</span>
           </li>
-          <li className="flex items-start gap-2 text-sm text-white/75">
-            <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--dourado)]" />
+          <li className="flex items-start gap-2 text-[13px] text-white/75">
+            <Phone className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[color:var(--dourado)]" />
             <span>Telefone em atualização</span>
           </li>
-          <li className="flex items-start gap-2 text-sm text-white/75">
-            <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--dourado)]" />
+          <li className="flex items-start gap-2 text-[13px] text-white/75">
+            <Mail className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[color:var(--dourado)]" />
             <span>contato@uniaodacolina.org</span>
           </li>
         </FooterCol>
       </div>
       <div className="relative border-t border-white/10">
-        <div className="container-uc flex flex-col items-center justify-between gap-3 py-5 text-xs text-white/60 md:flex-row">
+        <div className="container-uc flex flex-col items-center justify-between gap-2 py-4 text-[11.5px] text-white/60 md:flex-row">
           <p>© {new Date().getFullYear()} G.R.E.S. União da Colina — Todos os direitos reservados.</p>
           <p>
             <Link to="/contato" className="hover:text-white">Política de privacidade</Link>
@@ -88,10 +81,10 @@ export function SiteFooter() {
 function FooterCol({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <h4 className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-[color:var(--verde-claro)]">
+      <h4 className="mb-3 text-[12px] font-bold uppercase tracking-[0.18em] text-[color:var(--verde-claro)]">
         {title}
       </h4>
-      <ul className="space-y-2">{children}</ul>
+      <ul className="space-y-1.5">{children}</ul>
     </div>
   );
 }
@@ -99,25 +92,9 @@ function FooterCol({ title, children }: { title: string; children: React.ReactNo
 function FooterLink({ to, children }: { to: string; children: React.ReactNode }) {
   return (
     <li>
-      <Link to={to} className="text-sm text-white/75 transition hover:text-white">
+      <Link to={to} className="text-[13px] text-white/75 transition hover:text-white">
         {children}
       </Link>
     </li>
-  );
-}
-
-function OrganicTop() {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 1440 60"
-      preserveAspectRatio="none"
-      className="block h-10 w-full text-[color:var(--verde-profundo)]"
-    >
-      <path
-        d="M0,32 C240,0 480,60 720,32 C960,4 1200,60 1440,24 L1440,60 L0,60 Z"
-        fill="currentColor"
-      />
-    </svg>
   );
 }

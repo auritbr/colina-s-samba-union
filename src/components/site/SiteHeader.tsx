@@ -4,8 +4,6 @@ import { Menu, X, Instagram, ChevronDown } from "lucide-react";
 import brasao from "@/assets/brasao.png.asset.json";
 import { NAV } from "@/data/navigation";
 import { cn } from "@/lib/utils";
-import { UnionColinaHeaderOrnament } from "./UnionColinaHeaderOrnament";
-
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
@@ -28,37 +26,31 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 text-white">
-      {/* Ornamental frame — structural composition, not just a texture */}
-      <div className="relative bg-[color:var(--verde-profundo)]">
-        <UnionColinaHeaderOrnament />
-      <a
+      <div className="relative bg-[color:var(--verde-profundo)] border-b border-white/10">
+        <a
         href="#conteudo"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-2 focus:z-50 focus:rounded-md focus:bg-white focus:px-3 focus:py-1 focus:text-[color:var(--verde-profundo)]"
       >
         Pular para o conteúdo
       </a>
-      <div className="container-uc relative flex h-[72px] items-center gap-6 lg:h-[84px]">
+      <div className="container-uc relative flex h-[60px] items-center gap-6 lg:h-[68px]">
         <Link to="/" className="relative flex items-center gap-3 shrink-0" aria-label="União da Colina — Início">
           <span
             aria-hidden="true"
-            className="pointer-events-none absolute -left-2 top-1/2 h-[64px] w-[64px] -translate-y-1/2 rounded-full ring-1 ring-white/25 lg:h-[76px] lg:w-[76px]"
-          />
-          <span
-            aria-hidden="true"
-            className="pointer-events-none absolute -left-1 top-1/2 h-[58px] w-[58px] -translate-y-1/2 rounded-full ring-[1px] ring-[color:var(--dourado)]/45 lg:h-[70px] lg:w-[70px]"
+            className="pointer-events-none absolute -left-1 top-1/2 h-[46px] w-[46px] -translate-y-1/2 rounded-full ring-[1px] ring-[color:var(--dourado)]/40 lg:h-[52px] lg:w-[52px]"
           />
           <img
             src={brasao.url}
             alt="Brasão da União da Colina"
-            className="relative h-[54px] w-[54px] object-contain lg:h-[64px] lg:w-[64px]"
-            width={64}
-            height={64}
+            className="relative h-[40px] w-[40px] object-contain lg:h-[46px] lg:w-[46px]"
+            width={46}
+            height={46}
           />
           <span className="relative hidden sm:flex flex-col leading-tight">
-            <span className="text-[10px] uppercase tracking-[0.22em] text-[color:var(--verde-claro)]/80">
+            <span className="text-[9px] uppercase tracking-[0.22em] text-[color:var(--verde-claro)]/80">
               G.R.E.S.
             </span>
-            <span className="text-[15px] font-bold">União da Colina</span>
+            <span className="text-[13.5px] font-bold">União da Colina</span>
           </span>
         </Link>
 
@@ -69,12 +61,12 @@ export function SiteHeader() {
                 <Link
                   to={item.to}
                   className={cn(
-                    "inline-flex items-center gap-1 rounded-md px-2.5 py-2 text-[13.5px] font-semibold text-white/85 transition hover:text-white",
+                    "inline-flex items-center gap-1 rounded-md px-2.5 py-1.5 text-[12.5px] font-semibold text-white/85 transition hover:text-white",
                     isActive(item.to) && "text-white",
                   )}
                 >
                   {item.label}
-                  {item.children && <ChevronDown className="h-3.5 w-3.5 opacity-70" />}
+                  {item.children && <ChevronDown className="h-3 w-3 opacity-70" />}
                   {isActive(item.to) && (
                     <span className="absolute inset-x-3 -bottom-[1px] h-[2px] bg-[color:var(--dourado)]" />
                   )}
@@ -82,21 +74,21 @@ export function SiteHeader() {
               ) : (
                 <button
                   type="button"
-                  className="inline-flex items-center gap-1 rounded-md px-2.5 py-2 text-[13.5px] font-semibold text-white/85 transition hover:text-white"
+                  className="inline-flex items-center gap-1 rounded-md px-2.5 py-1.5 text-[12.5px] font-semibold text-white/85 transition hover:text-white"
                 >
                   {item.label}
-                  <ChevronDown className="h-3.5 w-3.5 opacity-70" />
+                  <ChevronDown className="h-3 w-3 opacity-70" />
                 </button>
               )}
               {item.children && (
-                <div className="invisible absolute left-0 top-full z-[60] min-w-[260px] pt-2 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                <div className="invisible absolute left-0 top-full z-[60] min-w-[240px] pt-2 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
                   <div className="overflow-hidden rounded-lg border border-white/10 bg-[color:var(--verde-escuro)] shadow-2xl">
                     {item.children.map((c) => (
                       <Link
                         key={c.to}
                         to={c.to}
                         className={cn(
-                          "block border-b border-white/5 px-4 py-2.5 text-sm text-white/85 transition hover:bg-white/5 hover:text-white",
+                          "block border-b border-white/5 px-4 py-2 text-[13px] text-white/85 transition hover:bg-white/5 hover:text-white",
                           isActive(c.to) && "bg-white/5 text-white",
                         )}
                       >
@@ -116,24 +108,24 @@ export function SiteHeader() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram da União da Colina"
-            className="hidden sm:inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/85 transition hover:border-white/40 hover:text-white"
+            className="hidden sm:inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/15 text-white/85 transition hover:border-white/40 hover:text-white"
           >
-            <Instagram className="h-4 w-4" />
+            <Instagram className="h-3.5 w-3.5" />
           </a>
           <Link
             to="/a-escola"
-            className="hidden xl:inline-flex items-center rounded-full bg-white px-4 py-2 text-[13.5px] font-semibold text-[color:var(--verde-profundo)] transition hover:bg-[color:var(--verde-claro)]"
+            className="hidden xl:inline-flex items-center rounded-full bg-white px-3.5 py-1.5 text-[12.5px] font-semibold text-[color:var(--verde-profundo)] transition hover:bg-[color:var(--verde-claro)]"
           >
             Conheça nossa história
           </Link>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/15 text-white transition hover:border-white/40 lg:hidden"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/15 text-white transition hover:border-white/40 lg:hidden"
             aria-label={open ? "Fechar menu" : "Abrir menu"}
             aria-expanded={open}
           >
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {open ? <X className="h-4.5 w-4.5" /> : <Menu className="h-4.5 w-4.5" />}
           </button>
         </div>
       </div>
@@ -142,7 +134,7 @@ export function SiteHeader() {
       {/* Mobile panel */}
       <div
         className={cn(
-          "fixed inset-0 top-[72px] z-40 origin-top overflow-y-auto bg-[color:var(--verde-profundo)] transition duration-300 lg:hidden",
+          "fixed inset-0 top-[60px] z-40 origin-top overflow-y-auto bg-[color:var(--verde-profundo)] transition duration-300 lg:hidden",
           open ? "pointer-events-auto opacity-100 translate-y-0" : "pointer-events-none opacity-0 -translate-y-2",
         )}
       >
