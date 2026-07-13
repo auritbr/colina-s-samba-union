@@ -129,8 +129,16 @@ function Index() {
       </section>
 
       {/* APRESENTAÇÃO */}
-      <section className="bg-background">
-        <div className="container-uc grid gap-12 py-20 md:grid-cols-2 md:py-28 lg:gap-20">
+      <section
+        className="relative bg-background"
+        style={{
+          backgroundImage: `url(${ornamentLight.url})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="container-uc relative grid gap-12 py-20 md:grid-cols-2 md:py-28 lg:gap-20">
           <div className="relative order-2 md:order-1">
             <div className="relative overflow-hidden rounded-[36px] border-8 border-[color:var(--verde-claro)] shadow-2xl">
               <img src={historia} alt="Fotografia histórica da comunidade da Colina" className="h-full w-full object-cover" loading="lazy" width={1280} height={1280} />
@@ -205,8 +213,22 @@ function Index() {
       </section>
 
       {/* MEMÓRIA VIVA */}
-      <section className="relative bg-[color:var(--verde-profundo)] text-white">
-        <img src={pavilhao} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover opacity-15" loading="lazy" />
+      <section className="relative isolate overflow-hidden bg-[color:var(--verde-profundo)] text-white">
+        <img
+          src={ornamentDark.url}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover opacity-90"
+          loading="lazy"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(3,47,29,0.55) 0%, rgba(3,47,29,0.75) 100%)",
+          }}
+        />
         <div className="container-uc relative py-14 md:py-20">
           <SectionTitle
             eyebrow="Memória viva"
