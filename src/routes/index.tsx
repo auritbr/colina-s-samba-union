@@ -216,7 +216,21 @@ function Index() {
 
       {/* MEMÓRIA VIVA */}
       <section className="relative bg-[color:var(--verde-profundo)] text-white">
-        <img src={pavilhao} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover opacity-15" loading="lazy" />
+        <img
+          src={bgMemoriaViva.url}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 -z-10 h-full w-full object-cover"
+          loading="lazy"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-10"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(3,47,29,0.55) 0%, rgba(3,47,29,0.35) 50%, rgba(3,47,29,0.65) 100%)",
+          }}
+        />
         <div className="container-uc relative py-14 md:py-20">
           <SectionTitle
             eyebrow="Memória viva"
