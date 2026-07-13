@@ -28,5 +28,7 @@ export const NAV: NavItem[] = [
       { label: "Carnaval 2026", to: "/carnaval-2026" },
     ],
   },
+  { label: "Notícias", to: "/noticias" },
+  { label: "Galeria", to: "/galeria" },
   { label: "Contato", to: "/contato" },
 ];
