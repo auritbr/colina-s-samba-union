@@ -139,9 +139,6 @@ function Index() {
         </svg>
       </section>
 
-      {/* Faixa ornamental — transição pós-hero */}
-      <OrnamentBand variant="hero" />
-
       {/* APRESENTAÇÃO */}
       <section className="bg-background">
         <div className="container-uc grid gap-12 py-20 md:grid-cols-2 md:py-28 lg:gap-20">
