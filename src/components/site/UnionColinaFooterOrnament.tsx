@@ -26,21 +26,6 @@ export function UnionColinaFooterOrnament({ className }: { className?: string })
             <stop offset="0%" stopColor="#16834C" />
             <stop offset="100%" stopColor="#0B5D35" />
           </linearGradient>
-          {/* Reusable leaf shape inspired by the laurel branch of the crest */}
-          <symbol id="uc-leaf" viewBox="-6 -14 12 28">
-            <path
-              d="M0,-13 C4.2,-9 5.6,-3 3.6,3 C2.1,7.6 0.9,10.6 0,13 C-0.9,10.6 -2.1,7.6 -3.6,3 C-5.6,-3 -4.2,-9 0,-13 Z"
-              fill="currentColor"
-            />
-            <path d="M0,-11 L0,11" stroke="rgba(0,0,0,0.18)" strokeWidth="0.6" fill="none" />
-          </symbol>
-          {/* Small five-point star, echoing the stars around the seal */}
-          <symbol id="uc-star" viewBox="-5 -5 10 10">
-            <path
-              d="M0,-4.6 L1.15,-1.4 L4.5,-1.4 L1.75,0.6 L2.85,3.8 L0,1.85 L-2.85,3.8 L-1.75,0.6 L-4.5,-1.4 L-1.15,-1.4 Z"
-              fill="currentColor"
-            />
-          </symbol>
         </defs>
 
         {/* upper light green fold */}
@@ -71,87 +56,27 @@ export function UnionColinaFooterOrnament({ className }: { className?: string })
           fill="url(#uc-foot-main)"
         />
 
-        {/* concentric arcs echoing the circular seal of the crest */}
-        <g fill="none" stroke="rgba(255,255,255,0.18)" strokeWidth="0.9">
-          <path d="M540,178 C620,150 820,150 900,178" />
-          <path d="M520,190 C610,158 830,158 920,190" />
+        {/* radiating curves left */}
+        <g fill="none" stroke="rgba(255,255,255,0.22)" strokeWidth="0.9">
+          <path d="M60,182 C280,168 500,196 720,178" />
+          <path d="M60,196 C300,186 540,214 760,192" />
         </g>
-        <g fill="none" stroke="rgba(200,168,78,0.55)" strokeWidth="0.7">
-          <path d="M560,170 C630,146 810,146 880,170" />
+        {/* radiating curves right */}
+        <g fill="none" stroke="rgba(255,255,255,0.16)" strokeWidth="0.8">
+          <path d="M1380,182 C1160,168 940,196 720,178" />
+          <path d="M1380,196 C1140,186 900,214 680,192" />
         </g>
-
-        {/* laurel branch — left side (leaves of decreasing size following the ribbon) */}
-        <g style={{ color: "rgba(255,255,255,0.55)" }}>
-          {[
-            { x: 520, y: 178, r: -62, s: 1 },
-            { x: 470, y: 180, r: -55, s: 0.95 },
-            { x: 420, y: 184, r: -48, s: 0.9 },
-            { x: 370, y: 188, r: -42, s: 0.85 },
-            { x: 320, y: 190, r: -36, s: 0.8 },
-            { x: 270, y: 194, r: -30, s: 0.75 },
-            { x: 220, y: 196, r: -24, s: 0.7 },
-            { x: 170, y: 198, r: -18, s: 0.65 },
-            { x: 120, y: 200, r: -12, s: 0.6 },
-          ].map((l, i) => (
-            <use
-              key={`ll-${i}`}
-              href="#uc-leaf"
-              x={-6}
-              y={-14}
-              width={12}
-              height={28}
-              transform={`translate(${l.x},${l.y}) rotate(${l.r}) scale(${l.s})`}
-            />
-          ))}
-          {/* stem of the branch */}
-          <path
-            d="M120,200 C240,196 380,190 520,182"
-            fill="none"
-            stroke="rgba(255,255,255,0.35)"
-            strokeWidth="0.9"
-          />
+        {/* gold accents */}
+        <g fill="none" stroke="rgba(200,168,78,0.45)" strokeWidth="0.7">
+          <path d="M120,172 C340,158 560,186 780,168" />
+          <path d="M1320,172 C1100,158 880,186 660,168" />
         </g>
 
-        {/* laurel branch — right side, mirrored */}
-        <g style={{ color: "rgba(255,255,255,0.55)" }}>
-          {[
-            { x: 920, y: 178, r: 62, s: 1 },
-            { x: 970, y: 180, r: 55, s: 0.95 },
-            { x: 1020, y: 184, r: 48, s: 0.9 },
-            { x: 1070, y: 188, r: 42, s: 0.85 },
-            { x: 1120, y: 190, r: 36, s: 0.8 },
-            { x: 1170, y: 194, r: 30, s: 0.75 },
-            { x: 1220, y: 196, r: 24, s: 0.7 },
-            { x: 1270, y: 198, r: 18, s: 0.65 },
-            { x: 1320, y: 200, r: 12, s: 0.6 },
-          ].map((l, i) => (
-            <use
-              key={`lr-${i}`}
-              href="#uc-leaf"
-              x={-6}
-              y={-14}
-              width={12}
-              height={28}
-              transform={`translate(${l.x},${l.y}) rotate(${l.r}) scale(${l.s})`}
-            />
-          ))}
-          <path
-            d="M920,182 C1060,190 1200,196 1320,200"
-            fill="none"
-            stroke="rgba(255,255,255,0.35)"
-            strokeWidth="0.9"
-          />
-        </g>
-
-        {/* discrete gold stars punctuating the composition */}
-        <g style={{ color: "#C8A84E" }}>
-          <use href="#uc-star" transform="translate(180,164) scale(0.9)" />
-          <use href="#uc-star" transform="translate(1260,164) scale(0.9)" />
-          <use href="#uc-star" transform="translate(360,150) scale(0.7)" />
-          <use href="#uc-star" transform="translate(1080,150) scale(0.7)" />
-        </g>
-        <g style={{ color: "rgba(255,255,255,0.75)" }}>
-          <use href="#uc-star" transform="translate(720,138) scale(0.75)" />
+        {/* tiny gold star accents */}
+        <g fill="#C8A84E">
+          <circle cx="360" cy="150" r="1.6" />
+          <circle cx="720" cy="144" r="1.8" />
+          <circle cx="1080" cy="150" r="1.6" />
         </g>
       </svg>
 
