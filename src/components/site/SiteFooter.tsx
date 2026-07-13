@@ -1,12 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
 import brasao from "@/assets/brasao.png.asset.json";
-import { OrnamentBand } from "./OrnamentBand";
-
 export function SiteFooter() {
   return (
-    <footer className="relative text-white" style={{ backgroundColor: "#12481F" }}>
-      <OrnamentBand variant="footer" className="-mb-px" />
+    <footer className="relative bg-[color:var(--verde-profundo)] text-white">
       <div className="container-uc relative grid gap-8 pb-10 pt-6 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-3">
