@@ -1,7 +1,7 @@
 import brasao from "@/assets/brasao.png.asset.json";
+import ornamentBand from "@/assets/ornament-green-band.png.asset.json";
 import { Link } from "@tanstack/react-router";
 import { ChevronRight, Home } from "lucide-react";
-import { BrandPattern } from "./BrandPattern";
 
 export function PageHero({
   eyebrow = "G.R.E.S. União da Colina",
@@ -35,7 +35,12 @@ export function PageHero({
             "linear-gradient(135deg, rgba(3,47,29,0.94), rgba(11,93,53,0.78) 60%, rgba(3,47,29,0.96))",
         }}
       />
-      <BrandPattern variant="hero" className="opacity-70" />
+      <img
+        src={ornamentBand.url}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-0 h-full w-full object-cover opacity-60 mix-blend-screen"
+      />
       <img
         src={brasao.url}
         alt=""
