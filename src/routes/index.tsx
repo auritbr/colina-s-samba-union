@@ -23,6 +23,9 @@ import interpretes from "@/assets/interpretes.jpg";
 import mestreSala from "@/assets/mestre-sala.jpg";
 import velhaGuarda from "@/assets/velha-guarda.jpg";
 import pavilhao from "@/assets/pavilhao.jpg";
+import ornamentLight from "@/assets/ornament-light-bg.png.asset.json";
+import ornamentDark from "@/assets/ornament-dark-frame.png.asset.json";
+import ornamentBand from "@/assets/ornament-green-band.png.asset.json";
 import { SectionTitle } from "@/components/site/SectionTitle";
 import { PlaceholderNote } from "@/components/site/PlaceholderNote";
 
