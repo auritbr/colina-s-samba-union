@@ -25,7 +25,6 @@ import velhaGuarda from "@/assets/velha-guarda.jpg";
 import pavilhao from "@/assets/pavilhao.jpg";
 import { SectionTitle } from "@/components/site/SectionTitle";
 import { PlaceholderNote } from "@/components/site/PlaceholderNote";
-import { OrnamentBand } from "@/components/site/OrnamentBand";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -138,9 +137,6 @@ function Index() {
           />
         </svg>
       </section>
-
-      {/* Faixa ornamental — transição pós-hero */}
-      <OrnamentBand variant="hero" />
 
       {/* APRESENTAÇÃO */}
       <section className="bg-background">

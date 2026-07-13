@@ -2,7 +2,6 @@ import brasao from "@/assets/brasao.png.asset.json";
 import { Link } from "@tanstack/react-router";
 import { ChevronRight, Home } from "lucide-react";
 import { BrandPattern } from "./BrandPattern";
-import { OrnamentBand } from "./OrnamentBand";
 
 export function PageHero({
   eyebrow = "G.R.E.S. União da Colina",
@@ -18,7 +17,6 @@ export function PageHero({
   breadcrumb?: string;
 }) {
   return (
-    <>
     <section className="relative isolate overflow-hidden bg-[color:var(--verde-profundo)] text-white">
       {image && (
         <img
@@ -81,7 +79,5 @@ export function PageHero({
         />
       </svg>
     </section>
-    <OrnamentBand variant="hero" />
-    </>
   );
 }
