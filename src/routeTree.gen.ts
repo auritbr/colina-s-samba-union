@@ -19,7 +19,6 @@ import { Route as ComissaoDeFrenteRouteImport } from './routes/comissao-de-frent
 import { Route as Carnaval2026RouteImport } from './routes/carnaval-2026'
 import { Route as BateriaRouteImport } from './routes/bateria'
 import { Route as AlaDasBaianasRouteImport } from './routes/ala-das-baianas'
-import { Route as AEscolaRouteImport } from './routes/a-escola'
 import { Route as IndexRouteImport } from './routes/index'
 
 const VelhaGuardaRoute = VelhaGuardaRouteImport.update({
@@ -73,11 +72,6 @@ const AlaDasBaianasRoute = AlaDasBaianasRouteImport.update({
   path: '/ala-das-baianas',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AEscolaRoute = AEscolaRouteImport.update({
-  id: '/a-escola',
-  path: '/a-escola',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -86,7 +80,6 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/a-escola': typeof AEscolaRoute
   '/ala-das-baianas': typeof AlaDasBaianasRoute
   '/bateria': typeof BateriaRoute
   '/carnaval-2026': typeof Carnaval2026Route
@@ -100,7 +93,6 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/a-escola': typeof AEscolaRoute
   '/ala-das-baianas': typeof AlaDasBaianasRoute
   '/bateria': typeof BateriaRoute
   '/carnaval-2026': typeof Carnaval2026Route
@@ -115,7 +107,6 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/a-escola': typeof AEscolaRoute
   '/ala-das-baianas': typeof AlaDasBaianasRoute
   '/bateria': typeof BateriaRoute
   '/carnaval-2026': typeof Carnaval2026Route
@@ -131,7 +122,6 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/a-escola'
     | '/ala-das-baianas'
     | '/bateria'
     | '/carnaval-2026'
@@ -145,7 +135,6 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/a-escola'
     | '/ala-das-baianas'
     | '/bateria'
     | '/carnaval-2026'
@@ -159,7 +148,6 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
-    | '/a-escola'
     | '/ala-das-baianas'
     | '/bateria'
     | '/carnaval-2026'
@@ -174,7 +162,6 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AEscolaRoute: typeof AEscolaRoute
   AlaDasBaianasRoute: typeof AlaDasBaianasRoute
   BateriaRoute: typeof BateriaRoute
   Carnaval2026Route: typeof Carnaval2026Route
@@ -259,13 +246,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AlaDasBaianasRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/a-escola': {
-      id: '/a-escola'
-      path: '/a-escola'
-      fullPath: '/a-escola'
-      preLoaderRoute: typeof AEscolaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -278,7 +258,6 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AEscolaRoute: AEscolaRoute,
   AlaDasBaianasRoute: AlaDasBaianasRoute,
   BateriaRoute: BateriaRoute,
   Carnaval2026Route: Carnaval2026Route,
