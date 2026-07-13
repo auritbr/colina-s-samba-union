@@ -14,6 +14,7 @@ import {
   Users,
 } from "lucide-react";
 import brasao from "@/assets/brasao.png.asset.json";
+import bgMemoriaViva from "@/assets/bg-memoria-viva.png.asset.json";
 import heroDesfile from "@/assets/hero-desfile.jpg";
 import historia from "@/assets/historia.jpg";
 import baianas from "@/assets/baianas.jpg";
