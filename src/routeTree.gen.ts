@@ -13,6 +13,7 @@ import { Route as VelhaGuardaRouteImport } from './routes/velha-guarda'
 import { Route as TitulosRouteImport } from './routes/titulos'
 import { Route as DiretoriaRouteImport } from './routes/diretoria'
 import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as ComissaoDeFrenteRouteImport } from './routes/comissao-de-frente'
 import { Route as Carnaval2026RouteImport } from './routes/carnaval-2026'
 import { Route as BateriaRouteImport } from './routes/bateria'
 import { Route as AlaDasBaianasRouteImport } from './routes/ala-das-baianas'
@@ -37,6 +38,11 @@ const DiretoriaRoute = DiretoriaRouteImport.update({
 const ContatoRoute = ContatoRouteImport.update({
   id: '/contato',
   path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComissaoDeFrenteRoute = ComissaoDeFrenteRouteImport.update({
+  id: '/comissao-de-frente',
+  path: '/comissao-de-frente',
   getParentRoute: () => rootRouteImport,
 } as any)
 const Carnaval2026Route = Carnaval2026RouteImport.update({
@@ -71,6 +77,7 @@ export interface FileRoutesByFullPath {
   '/ala-das-baianas': typeof AlaDasBaianasRoute
   '/bateria': typeof BateriaRoute
   '/carnaval-2026': typeof Carnaval2026Route
+  '/comissao-de-frente': typeof ComissaoDeFrenteRoute
   '/contato': typeof ContatoRoute
   '/diretoria': typeof DiretoriaRoute
   '/titulos': typeof TitulosRoute
@@ -82,6 +89,7 @@ export interface FileRoutesByTo {
   '/ala-das-baianas': typeof AlaDasBaianasRoute
   '/bateria': typeof BateriaRoute
   '/carnaval-2026': typeof Carnaval2026Route
+  '/comissao-de-frente': typeof ComissaoDeFrenteRoute
   '/contato': typeof ContatoRoute
   '/diretoria': typeof DiretoriaRoute
   '/titulos': typeof TitulosRoute
@@ -94,6 +102,7 @@ export interface FileRoutesById {
   '/ala-das-baianas': typeof AlaDasBaianasRoute
   '/bateria': typeof BateriaRoute
   '/carnaval-2026': typeof Carnaval2026Route
+  '/comissao-de-frente': typeof ComissaoDeFrenteRoute
   '/contato': typeof ContatoRoute
   '/diretoria': typeof DiretoriaRoute
   '/titulos': typeof TitulosRoute
@@ -107,6 +116,7 @@ export interface FileRouteTypes {
     | '/ala-das-baianas'
     | '/bateria'
     | '/carnaval-2026'
+    | '/comissao-de-frente'
     | '/contato'
     | '/diretoria'
     | '/titulos'
@@ -118,6 +128,7 @@ export interface FileRouteTypes {
     | '/ala-das-baianas'
     | '/bateria'
     | '/carnaval-2026'
+    | '/comissao-de-frente'
     | '/contato'
     | '/diretoria'
     | '/titulos'
@@ -129,6 +140,7 @@ export interface FileRouteTypes {
     | '/ala-das-baianas'
     | '/bateria'
     | '/carnaval-2026'
+    | '/comissao-de-frente'
     | '/contato'
     | '/diretoria'
     | '/titulos'
@@ -141,6 +153,7 @@ export interface RootRouteChildren {
   AlaDasBaianasRoute: typeof AlaDasBaianasRoute
   BateriaRoute: typeof BateriaRoute
   Carnaval2026Route: typeof Carnaval2026Route
+  ComissaoDeFrenteRoute: typeof ComissaoDeFrenteRoute
   ContatoRoute: typeof ContatoRoute
   DiretoriaRoute: typeof DiretoriaRoute
   TitulosRoute: typeof TitulosRoute
@@ -175,6 +188,13 @@ declare module '@tanstack/react-router' {
       path: '/contato'
       fullPath: '/contato'
       preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comissao-de-frente': {
+      id: '/comissao-de-frente'
+      path: '/comissao-de-frente'
+      fullPath: '/comissao-de-frente'
+      preLoaderRoute: typeof ComissaoDeFrenteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/carnaval-2026': {
@@ -221,6 +241,7 @@ const rootRouteChildren: RootRouteChildren = {
   AlaDasBaianasRoute: AlaDasBaianasRoute,
   BateriaRoute: BateriaRoute,
   Carnaval2026Route: Carnaval2026Route,
+  ComissaoDeFrenteRoute: ComissaoDeFrenteRoute,
   ContatoRoute: ContatoRoute,
   DiretoriaRoute: DiretoriaRoute,
   TitulosRoute: TitulosRoute,
